@@ -1,10 +1,9 @@
-.nameCliente{
-    padding: 0;
-    margin: auto;
-    text-align: center;
+body, html {
+    height: 100%;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(rgb(49, 49, 49), rgb(0, 0, 0));
 }
-.selectCar{
-    padding: 0%;
-    margin: auto;
+.form-group{
+    color: white;
     text-align: center;
 }
