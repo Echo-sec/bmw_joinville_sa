@@ -1,81 +1,65 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <!-- Meta tags Obrigatórias -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="telaAgendamento.css">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-    <title>Olá, mundo!</title>
+<head>
+  <!-- Meta tags Obrigatórias -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="../CSS/telaAgendamento.css">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+  <title>Olá, mundo!</title>
 </head>
 <body>
-  <form>
-    <div class="form-group">
-      <label for="exampleFormControlInput1">Insira o nome do Cliente:</label>
-      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="nome@exemplo.com">
+<fieldset>
+  <h2>Agendamento Cliente</h2>
+</fieldset>
+  <div class="container">
+    <div class="py-5 text-center">
+      <img class="d-block mx-auto mb-4" src="../imgLogin/Logo BMW.png" alt="" width="72" height="72">
+      <h2>Formulário de Cadastro</h2>
     </div>
-    <div class="selectCar">
-      <select class="form-select" aria-label="Default select example">
-        <option selected>Insira o veículo</option>
-        <option value="1">BMW Série 1</option>
-        <option value="2">BMW X6 M Competition</option>
-        <option value="3">BMW Série 3 Sedã</option>
-        <option value="4">BMW X5</option>
-        <option value="5">BMW Série 4 Cabrio</option>
-        <option value="6">BMW X4</option>
-        <option value="6">BMW Concept XM</option>
-      </select>
-    <div class="form-group">
-      <label for="exampleFormControlSelect2">Exemplo de select múltiplo</label>
-      <select multiple class="form-control" id="exampleFormControlSelect2">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-      </select>
+
+    <div class="col-md-12 order-md-1">
+      <form class="needs-validation" novalidate>
+        <div class="row">
+          <div class="col-md-6 mb-3 text-white">
+            <label for="primeiroNome">Insiria o nome do Cliente:</label>
+            <input type="text" class="form-control" id="primeiroNome" placeholder="João da Silva" value="" required>
+            <div class="invalid-feedback ">
+              É obrigatório inserir um nome válido.
+            </div>
+
+              <div class="col-md-12 order-md-1">
+                <select class="form-select" aria-label="Default select example">
+                  <option selected>Insira o veículo</option>
+                  <option value="1">BMW Série 1</option>
+                  <option value="2">BMW X6 M Competition</option>
+                  <option value="3">BMW Série 3 Sedã</option>
+                  <option value="4">BMW X5</option>
+                  <option value="5">BMW Série 4 Cabrio</option>
+                  <option value="6">BMW X4</option>
+                  <option value="6">BMW Concept XM</option>
+                </select>
+            </div>
+            <div class="col-md-12 order-md-1 ">
+              <label class="input-group-text" for="insiraData">Insira a data:</label>
+              <label id="date" type="date">
+            </div>
+            <div>
+              <label for="appt">Insira o horário:</label>
+              <input type="time" id="appt" name="appt" min="09:00" max="18:00" required>
+            </div>
+          </div>
+      </form>
     </div>
-    <div class="form-group">
-      <label for="exampleFormControlTextarea1">Exemplo de textarea</label>
-      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-    </div>
-  </form>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+
+
 </body>
-
-<!-- <body>
-  <form>
-    <div class="nameCliente">
-      <span class="input-group-text" id="basic-addon1">Insira o nome do cliente</span>
-      <input type="text">
-    </div>
-    <div class="selectCar">
-      <select class="form-select" aria-label="Default select example">
-        <option selected>Insira o veículo</option>
-        <option value="1">BMW Série 1</option>
-        <option value="2">BMW X6 M Competition</option>
-        <option value="3">BMW Série 3 Sedã</option>
-        <option value="4">BMW X5</option>
-        <option value="5">BMW Série 4 Cabrio</option>
-        <option value="6">BMW X4</option>
-        <option value="6">BMW Concept XM</option>
-      </select>
-    </div>
-    <div class="input-group mb-3">
-      <span class="input-group-text">Insira a data:</span>
-      <input id="date" type="date">
-    </div>
-
-    <div>
-      <label for="appt">Insira a hora:</label>
-      <input type="time" id="appt" name="appt" min="09:00" max="18:00" required>
-    </div>
-
-    <div class="input-group">
-      <span class="input-group-text">Detalhes do agendamento:</span>
-      <textarea class="form-control" aria-label="Detalhes do agendamento"></textarea>
-  </form>
-</body>
-
-</html> -->
