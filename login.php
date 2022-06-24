@@ -19,10 +19,10 @@
             <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
             <img id="profile-img" class="profile-img-card" src="../bmw_joinville_sa/imgLogin/Logo BMW.png" />
             <p id="profile-name" class="profile-name-card"></p>
-            <form class="form-signin">
+            <form class="form-signin" action="php/autenticacao.php" method="POST">
                 <span id="reauth-email" class="reauth-email"></span>
-                <input type="text" id="nome" class="form-control" placeholder="Login" required autofocus>
-                <input type="password" id="senha" class="form-control" placeholder="Senha" required>
+                <input type="text" id="nome" name="user"class="form-control" placeholder="Login" required autofocus>
+                <input type="password" id="senha" name="senha"class="form-control" placeholder="Senha" required>
                 <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Entrar</button>
             </form><!-- /form -->
         </div><!-- /card-container -->
