@@ -8,7 +8,7 @@ $senha=$_POST['senha'];
 //função md5() criptografa a senha no algoritimo MD5
 // $senhaMD5=md5($senha);
 
-$comando="SELECT nomeUsuario, senha FROM usuarios WHERE nomeUsuario = '".$user."' AND senha = '".$senha."' ";
+$comando="SELECT * FROM usuarios WHERE nomeUsuario = '".$user."' AND senha = '".$senha."' ";
 
 
 $resultado=mysqli_query($conexao,$comando);
@@ -20,13 +20,12 @@ if($linhas==0){
     header("Location: ../index.php?retorno=1");
 }else{
     $usuario=mysqli_fetch_assoc($resultado);
-    session_start();
-    $_SESSION['nivel']=$usuario['nivel'];
-    
-    if($usuario['nivel']=='1'){
-        header("Location: ../index.php?retorno=2");
-    }else{
-        header("Location: ../index.php?retorno=2");
+    if($usuario['nivel']==='1'){
+        header("Location: diretorPrincipal.php");
+    }else if($usuario['nivel']==='2'){
+        header("Location: vendedorPrincipal.php");
+    }else {
+            header("Location: fechadorPrincipal.php");
     }
 }
 
