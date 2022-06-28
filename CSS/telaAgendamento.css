@@ -1,5 +1,5 @@
 body{
-    height: 768px;
+    height: 834px;
     width:100%;
     background-repeat: no-repeat;
     background-image: linear-gradient(rgb(49, 49, 49), rgb(0, 0, 0));
@@ -12,4 +12,10 @@ body{
 }
 .obs{
     color: aliceblue;
+}
+.btn.btn-lg.btn-primary{
+    background-color: aliceblue;
+    color: black;
+    border-color: aliceblue;
+    margin: 5px;
 }
