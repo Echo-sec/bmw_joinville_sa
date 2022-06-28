@@ -13,7 +13,7 @@
     <div class="container" >
         <div class="py-5 text-left">
           <img class="d-block mx-auto mb-4" src="imgLogin/Logo BMW.png" alt="" width="90" height="90">
-          <h2>Cadastro de Usuário</h2>
+          <h2>Cadastro de Carros</h2>
         </div>
   
         <div class="row">
@@ -22,45 +22,45 @@
             <form class="needs-validation" novalidate>
               <div class="row">
                 <div class="col-md-6 mb-3">
-                  <label for="primeiroNome">Nome</label>
-                  <input type="text" class="form-control" id="primeiroNome" placeholder="Pedrinho" required>
+                  <label for="carro">Carro</label>
+                  <input type="text" class="form-control" id="carro" required>
                   <div class="invalid-feedback">
                     É obrigatório inserir um nome válido.
                   </div>
                 </div>
                 <div class="col-md-6 mb-3">
-                  <label for="senha">Senha</label>
-                  <input type="text" class="form-control" id="senha" required>
+                  <label for="ano">Ano</label>
+                  <input type="text" class="form-control" id="ano" required>
                   <div class="invalid-feedback">
-                    É obrigatório inserir uma senha válida.
+                    É obrigatório inserir um ano válido.
                   </div>
                 </div>
                 <div class="col-md-6 mb-3">
-                  <label for="sobrenome">Cargo</label>
+                  <label for="modelo">Modelo</label>
                     <select class="form-select" aria-label="Default select example">
-                        <option value="1">Vendedor</option>
-                        <option value="2">Fechador</option>
+                        <option value="1">SUV</option>
+                        <option value="2">Sedan</option>
+                        <option value="3">Hatch</option>
                     </select>
                 </div>
-
                 <div class="col-md-6 mb-3">
-                <label for="nickname">Nome usuário</label>
+                <label for="placa">Placa</label>
                 <div class="input-group">
-                  <input type="text" class="form-control" id="nickname" required>
+                  <input type="text" class="form-control" id="placa" required>
                   <div class="invalid-feedback" style="width: 100%;">
-                    Seu nickname é obrigatório.
+                    Insira uma placa válida.
                   </div>
                 </div>
               </div>
-              </div>
-              <button class="btn btn-primary btn-lg btn-block" type="submit">Cadastrar</button>
-              <div class="col-md-12 order-md-1">
-                <div class="col-md-6 mb-3">
-                    <label for="primeiroNome">Nome</label>
-                    <input type="text" class="form-control" id="primeiroNome" placeholder="Pedrinho" required>
+              <div class="col-md-6 mb-3">
+                    <label for="chassi">Chassi</label>
+                    <input type="text" class="form-control" id="chassi" required>
                     <div class="invalid-feedback">
-                        É obrigatório inserir um nome válido.
+                        É obrigatório inserir um número de chassi válido.
                 </div>
+              </div>
+              <div class="col-md-12 order-md-1">
+                
                 <div class="col-md-6 mb-3">
                     <button>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">

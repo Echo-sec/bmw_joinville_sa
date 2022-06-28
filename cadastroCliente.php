@@ -12,7 +12,7 @@
     <div class="container" >
       <div ></div>
         <div class="py-5 text-left">
-          <img class="d-block mx-auto mb-4" src="imgLogin/Logo BMW.png" alt="" width="72" height="72">
+          <img class="d-block mx-auto mb-4" src="imgLogin/Logo BMW.png" alt="" width="90" height="90">
           <h2>Formulário de Cadastro</h2>
         </div>
   
