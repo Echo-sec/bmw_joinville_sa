@@ -1,40 +1,51 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
 
 <head>
-  <!-- Meta tags Obrigatórias -->
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <link rel="stylesheet" href="../CSS/telaAgendamento.css">
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
-  <title>Olá, mundo!</title>
+  <title>Cadastro de clientes</title>
 </head>
+
 <body>
-<fieldset>
-  <h2>Agendamento Cliente</h2>
-</fieldset>
+
   <div class="container">
-    <div class="py-5 text-center">
-      <img class="d-block mx-auto mb-4" src="../imgLogin/Logo BMW.png" alt="" width="72" height="72">
-      <h2>Formulário de Cadastro</h2>
+    <div></div>
+    <div class="py-5 text-left text-white">
+      <img class="d-block mx-auto mb-3" src="../imgLogin/Logo BMW.png" alt="" width="90" height="90">
+      <h2>Agendamento de Clientes</h2>
     </div>
 
-    <div class="col-md-12 order-md-1">
-      <form class="needs-validation" novalidate>
-        <div class="row">
-          <div class="col-md-6 mb-3 text-white">
-            <label for="primeiroNome">Insiria o nome do Cliente:</label>
-            <input type="text" class="form-control" id="primeiroNome" placeholder="João da Silva" value="" required>
-            <div class="invalid-feedback ">
-              É obrigatório inserir um nome válido.
+    <div class="row">
+
+      <div class="col-md-12 order-md-1">
+        <form class="needs-validation" novalidate>
+          <div class="row">
+            <div class="col-md-4 mb-3" style="width: 100%;">
+              <label for="primeiroNome">Nome:</label>
+              <input type="text" class="form-control" id="primeiroNome" placeholder="Eduardo Alexandre" value=""
+                required>
+              <div class="invalid-feedback">
+                É obrigatório inserir um nome válido.
+              </div>
             </div>
 
-              <div class="col-md-12 order-md-1">
-                <select class="form-select" aria-label="Default select example">
-                  <option selected>Insira o veículo</option>
+            <div class="col-md-4 mb-3" style="width: 100%;">
+              <label for="sobrenome">Escolha uma data:</label>
+              <input type="date" class="form-control" value="" required>
+            </div>
+
+
+
+            <div class="form-row">
+              <div class="form-group col-md-4" style="width: 100%;">
+                <label for="inputState">Veiculo desejado:</label>
+                <br>
+                <select class="form-control">
+                  <option>Escolha um modelo de Carro</option>
                   <option value="1">BMW Série 1</option>
                   <option value="2">BMW X6 M Competition</option>
                   <option value="3">BMW Série 3 Sedã</option>
@@ -43,23 +54,31 @@
                   <option value="6">BMW X4</option>
                   <option value="6">BMW Concept XM</option>
                 </select>
+              </div>
             </div>
-            <div class="col-md-12 order-md-1 ">
-              <label class="input-group-text" for="insiraData">Insira a data:</label>
-              <label id="date" type="date">
-            </div>
-            <div>
-              <label for="appt">Insira o horário:</label>
+
+            <div class="col-md-5 mb-3">
+              <label for="appt">Escolha um horário para sua reunião:</label>
+              <br>
               <input type="time" id="appt" name="appt" min="09:00" max="18:00" required>
             </div>
-          </div>
-      </form>
+        </form>
+
+        <div class="obs">
+          <label for="exampleFormControlTextarea1">Adicione uma observação</label>
+          <br>
+          <textarea class="form-control"></textarea>
+        </div>
+        
+
+      </div>
     </div>
   </div>
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
 
 
 </body>
+
+</html>
