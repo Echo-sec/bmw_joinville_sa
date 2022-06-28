@@ -16,29 +16,30 @@
             <h2>Fechamento de Clientes</h2>
         </div>
 
-        <div class="form-row">
-            <div class="form-group col-md-4" style="width: 50%;">
-                <label for="inputState">Selecione o veículo desejado:</label>   
-                <select class="form-control">
-                    <option>Selecione</option>
-                    <option value="1">Carro - cliente - data</option>
-                    <option value="2">Carro - cliente - data</option>
+            <div class="form-row">
+                <div class="form-group col-md-4" style="width: 50%;">
+                    <label for="inputState">Selecione o veículo desejado:</label>   
+                    <select class="form-control">
+                        <option>Selecione</option>
+                        <option value="1">Carro - cliente - data</option>
+                        <option value="2">Carro - cliente - data</option>
+                    </select>
+                </div>
 
-                </select>
-            </div>
-        
-            <div class="form-group col-md-4" style="width: 50%;">
-                <label for="inputState">Status do veículo:</label>
-                <select class="form-control">
-                    <option>Selecione</option>
-                    <option value="1">Aprovado</option>
-                    <option value="1">Não aprovado</option>
-                </select>
-            </div>
-            <div class="col-md-4 mb-3" style="width: 50%;">
-                <label for="valor">Valor</label>
-                <input type="text" class="form-control" placeholder="R$ 000,00" value="">
-            </div>
+                <div class="form-group col-md-4" style="width: 50%;">
+                    <label for="inputState">Status do agendamento:</label>
+                    <select class="form-control">
+                        <option>Selecione</option>
+                        <option value="1">Aprovado</option>
+                        <option value="2">Não aprovado</option>
+                    </select>
+                </div>
 
-        </div>
+                <div class="col-md-4 mb-3" style="width: 50%;">
+                    <label for="valor">Valor</label>
+                    <input type="text" class="form-control" placeholder="R$ 000,00" value="">
+                </div>
+
+                <button type="submit" class="btn btn-lg btn-primary" disabled>Cadastrar</button>
+            </div>
     </div>
