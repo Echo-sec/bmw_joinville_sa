@@ -1,9 +1,15 @@
-body, html {
-    height: 100%;
+body{
+    height: 768px;
+    width:100%;
     background-repeat: no-repeat;
     background-image: linear-gradient(rgb(49, 49, 49), rgb(0, 0, 0));
 }
-.form-group{
-    color: white;
-    text-align: center;
+.col-md-4,.mb-3{
+    color: aliceblue;
+}
+.horario{
+    color: aliceblue;
+}
+.obs{
+    color: aliceblue;
 }
