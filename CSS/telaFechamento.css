@@ -4,3 +4,6 @@
     background-repeat: no-repeat;
     background-image: linear-gradient(rgb(49, 49, 49), rgb(0, 0, 0));
 }
+.btn.btn-lg{
+    background-color: aliceblue;
+}
