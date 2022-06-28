@@ -59,8 +59,15 @@
                         É obrigatório inserir um número de chassi válido.
                 </div>
               </div>
+              </div>
+              <button class="btn btn-primary btn-lg btn-block" type="submit">Cadastrar</button>
               <div class="col-md-12 order-md-1">
-                
+                <div class="col-md-6 mb-3">
+                    <label for="nomeCarro">Nome</label>
+                    <input type="text" class="form-control" id="nomeCarro" placeholder="BMW M2" required>
+                    <div class="invalid-feedback">
+                        É obrigatório inserir um nome válido.
+                </div>
                 <div class="col-md-6 mb-3">
                     <button>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
@@ -76,28 +83,32 @@
                 <thead>
                   <tr>
                     <th scope="col">Nome</th>
-                    <th scope="col">Cargo</th>
-                    <th scope="col">Nome usuário</th>
+                    <th scope="col">Ano</th>
+                    <th scope="col">Modelo</th>
+                    <th scope="col">Placa</th>
                     <th scope="col">Ações</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <th scope="row">Eduardo</th>
-                    <td>Vendedor</td>
-                    <td>Montanha</td>
+                    <th scope="row">BMW M1</th>
+                    <td>2020</td>
+                    <td>Sedan</td>
+                    <td>000000</td>
                     <td></td>
                   </tr>
                   <tr>
-                    <th scope="row">João</th>
-                    <td>Vendedor</td>
-                    <td>Pirikito</td>
+                    <th scope="row">BMW M2</th>
+                    <td>2020</td>
+                    <td>Sedan</td>
+                    <td>000000</td>
                     <td></td>
                   </tr>
                   <tr>
-                    <th scope="row">Lucas</th>
-                    <td>Fechador</td>
-                    <td>Mioti</td>
+                    <th scope="row">BMW M3</th>
+                    <td>2020</td>
+                    <td>Sedan</td>
+                    <td>000000</td>
                     <td></td>
 
                   </tr>
@@ -105,7 +116,7 @@
               </table>
               <hr class="mb-4">
             
-            </div>
+          
           </div>
         </div>
     </div>
