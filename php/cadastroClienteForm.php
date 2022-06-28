@@ -45,27 +45,27 @@
         <div class="row">
 
           <div class="col-md-12 order-md-1">
-            <form class="needs-validation" novalidate>
+            <form class="needs-validation" action="cadastroCliente.php" method="POST" novalidate>
               <div class="row">
                 <div class="col-md-4 mb-3">
                   <label for="primeiroNome">Nome</label>
-                  <input type="text" class="form-control" id="primeiroNome" placeholder="Eduardo Alexandre" value="" required>
+                  <input type="text" class="form-control" name="nome" id="primeiroNome" placeholder="Eduardo Alexandre" value="" required>
                   <div class="invalid-feedback">
                     É obrigatório inserir um nome válido.
                   </div>
                 </div>
                 <div class="col-md-4 mb-3">
                   <label for="sobrenome">CPF</label>
-                  <input type="number" class="form-control" id="CPF" placeholder="XXX.XXX.XXX-XX" value="" required>
+                  <input type="number" class="form-control" name="cpf" id="CPF" placeholder="XXX.XXX.XXX-XX" value="" required>
                   <div class="invalid-feedback">
-                    É obrigatório inserir um CPFválido.
+                    É obrigatório inserir um CPF válido.
                   </div>
                 </div>
                 <div class="col-md-4 mb-3">
                   <label for="sobrenome">Data de nascimento</label>
-                  <input type="date" class="form-control" id="CPF"  value="" required>
+                  <input type="date" class="form-control" name="dataNasc" id="CPF"  value="" required>
                   <div class="invalid-feedback">
-                    É obrigatório inserir um CPFválido.
+                    É obrigatório inserir uma data de nascimento.
                   </div>
                 </div>
               </div>
@@ -73,26 +73,25 @@
               <div class="mb-3">
                 <label for="nickname">CEP</label>
                 <div class="input-group">
-                  <input type="text" class="form-control" id="CEP" placeholder="CEP" required>
+                  <input type="text" class="form-control" id="CEP" name="cep" placeholder="CEP" required>
                   <div class="invalid-feedback" style="width: 100%;">
-                    Seu nickname é obrigatório.
+                    Seu CEP é obrigatório.
                   </div>
                 </div>
               </div>
   
               <div class="mb-3">
                 <label for="email">N°</label>
-                <input type="email" class="form-control" id="numeroCasa" placeholder="291">
+                <input type="email" class="form-control" id="numeroCasa" name="numCasa" placeholder="291">
                 <div class="invalid-feedback">
-                  Por favor, insira um endereço de e-mail válido, para atualizações de entrega.
-                </div>
+                  Por favor, insira um número de casa
               </div>
   
               <div class="mb-3">
                 <label for="endereco">Telefone</label>
-                <input type="text" class="form-control" id="telefone" placeholder="99 9999-9999" required>
+                <input type="text" class="form-control" id="telefone" name="telefone" placeholder="99 9999-9999" required>
                 <div class="invalid-feedback">
-                  Por favor, insira seu endereço de entrega.
+                  Por favor, insira seu telefone
                 </div>
               </div>
                 
