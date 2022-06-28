@@ -28,7 +28,7 @@
             </div>
         
             <div class="form-group col-md-4" style="width: 50%;">
-                <label for="inputState">Status do veículo:</label>
+                <label for="inputState">Status do agendamento:</label>
                 <select class="form-control">
                     <option>Selecione</option>
                     <option value="1">Aprovado</option>
