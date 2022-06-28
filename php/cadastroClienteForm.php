@@ -7,6 +7,21 @@
     <link rel="stylesheet" href="../css/style.css">
     <title>Cadastro de clientes</title>
   </head>
+
+  <div id="alertas">
+    <?php if(isset($_GET['retorno'])==true && $_GET['retorno']==0){ ?>
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <span>Houve algum problema ao a cadastrar o cliente!</span>
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+    <?php }else if(isset($_GET['retorno'])==true && $_GET['retorno']==1) ?>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <span>Cliente cadastrado com sucesso!</span>
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+
+    
+</div>
   <body>
   <header>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
