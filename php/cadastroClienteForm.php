@@ -89,7 +89,6 @@
                 Por favor, insira seu telefone
               </div>
             </div>
-
             <button class="btn btn-primary btn-lg btn-block" type="submit">Cadastrar</button>
         </form>
 
