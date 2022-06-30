@@ -85,7 +85,7 @@
               </div>
             </div>
 
-            <button class="btn btn-primary btn-lg btn-block" type="submit">Cadastrar</button>
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Atualizar</button>
         </form>
 
       
