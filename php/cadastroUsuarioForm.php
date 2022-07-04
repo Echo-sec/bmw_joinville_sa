@@ -9,7 +9,40 @@
     <link rel="stylesheet" href="../css/forms.css">
 </head>
 <body>
+<div id="alertas">
+  <?php if(isset($_GET['retorno'])==true && $_GET['retorno']==0){ ?>
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <span>Houve algum problema ao a cadastrar o usuário!</span>
+      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+    <?php }else if(isset($_GET['retorno'])==true && $_GET['retorno']==1) {?>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <span>Usuário cadastrado com sucesso!</span>
+      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+    <?php }else if(isset($_GET['retorno'])==true && $_GET['retorno']==2){ ?>
+	<div class="alert alert-success alert-dismissible fade show" role="alert">
+        <span>Pessoa excluída com sucesso!</span>
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+	<?php }else if(isset($_GET['retorno'])==true && $_GET['retorno']==3){ ?>
+	<div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <span>Não é possível excluir uma pessoa associada a compromissos!</span>
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+	<?php }else if(isset($_GET['retorno'])==true && $_GET['retorno']==4){ ?>
+	<div class="alert alert-success alert-dismissible fade show" role="alert">
+        <span>Pessoa editada com sucesso!</span>
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+	<?php }else if(isset($_GET['retorno'])==true && $_GET['retorno']==5){ ?>
+	<div class="alert alert-warning alert-dismissible fade show" role="alert">
+		<span>Houve algum problema editar a pessoa!</span>
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
 
+	<?php } ?>
+</div>
       
     <div class="container" >
         <div class="py-5 text-left">
@@ -20,25 +53,25 @@
         <div class="row">
 
           <div class="col-md-12 order-md-1">
-            <form class="needs-validation" novalidate>
+            <form class="needs-validation" method="POST" novalidate action="cadastroUsuario.php" >
               <div class="row">
                 <div class="col-md-6 mb-3">
                   <label for="primeiroNome">Nome</label>
-                  <input type="text" class="form-control" id="primeiroNome" placeholder="Pedrinho" required>
+                  <input type="text" class="form-control" id="primeiroNome" name="user" placeholder="Pedrinho" required>
                   <div class="invalid-feedback">
                     É obrigatório inserir um nome válido.
                   </div>
                 </div>
                 <div class="col-md-6 mb-3">
                   <label for="senha">Senha</label>
-                  <input type="text" class="form-control" id="senha" required>
+                  <input type="text" class="form-control" id="senha" name="senha" required>
                   <div class="invalid-feedback">
                     É obrigatório inserir uma senha válida.
                   </div>
                 </div>
                 <div class="col-md-6 mb-3">
                   <label for="sobrenome">Cargo</label>
-                    <select class="form-select" aria-label="Default select example">
+                    <select class="form-select" aria-label="Default select example" name="cargo">
                         <option value="1">Vendedor</option>
                         <option value="2">Fechador</option>
                     </select>
@@ -47,7 +80,7 @@
                 <div class="col-md-6 mb-3">
                 <label for="nickname">Nome usuário</label>
                 <div class="input-group">
-                  <input type="text" class="form-control" id="nickname" required>
+                  <input type="text" class="form-control" id="nickname" name="nomeUser" required>
                   <div class="invalid-feedback" style="width: 100%;">
                     Seu nickname é obrigatório.
                   </div>
