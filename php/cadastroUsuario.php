@@ -16,9 +16,6 @@ $comando="INSERT INTO usuarios (nomeUsuario, senha, nivel, nomeCompleto) VALUES
 // echo $comando;
 
 
-$resultado= mysqli_query($conexao,$comando);
-
-
 $resultado = mysqli_query($conexao, $comando);
 
 if($resultado==true){
