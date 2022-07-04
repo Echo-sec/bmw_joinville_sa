@@ -1,0 +1,10 @@
+body{
+    height: 768px;
+    width:100%;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(rgb(49, 49, 49), rgb(0, 0, 0));
+}
+.container-fluid{
+    padding: 1px;
+    opacity: 5;
+}
