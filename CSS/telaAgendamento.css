@@ -3,16 +3,9 @@ body{
     width:100%;
     background-repeat: no-repeat;
     background-image: linear-gradient(rgb(49, 49, 49), rgb(0, 0, 0));
+    color: white;
 }
-.col-md-4,.mb-3{
-    color: aliceblue;
-}
-.horario{
-    color: aliceblue;
-}
-.obs{
-    color: aliceblue;
-}
+
 .btn.btn-lg.btn-primary{
     background-color: aliceblue;
     color: black;
