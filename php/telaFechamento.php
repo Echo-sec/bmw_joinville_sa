@@ -40,6 +40,6 @@
                     <input type="text" class="form-control" placeholder="R$ 000,00" value="">
                 </div>
 
-                <button type="submit" class="btn btn-lg btn-primary" disabled>Cadastrar</button>
+                <button class="btn btn-primary btn-lg btn-block" type="submit">Cadastrar</button>
             </div>
     </div>
