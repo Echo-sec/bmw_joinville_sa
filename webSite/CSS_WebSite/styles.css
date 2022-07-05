@@ -11,9 +11,9 @@
 }
 
 :root {
-  --orange: rgb(0, 0, 0);
-  --blue: #131313;
-  --gray: #dadada;
+  --orange: #000000;
+  --blue: #2b2b2b;
+  --gray: #cccccc;
 }
 
 html,
@@ -197,9 +197,9 @@ section .card-wrapper {
 }
 
 section .card-item {
-  height: 400px;
+  height: 350px;
   background: var(--gray);
-  border-radius: 8px;
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -216,7 +216,7 @@ section .card-item {
 }
 
 .card-item img {
-  width: 85%;
+  width: 100%;
 }
 
 .card-item h4 {
@@ -226,12 +226,12 @@ section .card-item {
 .card-item p {
   width: 90%;
   font-style: italic;
-  color: #00000070;
+  color: #4f4f4f70;
 }
 
 .card-item button {
-  width: 90%;
-  padding: 15px 0px;
+  width: 60%;
+  padding: 10px;
   background: var(--blue);
   border-radius: 2px;
   color: white;
@@ -239,12 +239,12 @@ section .card-item {
   font-size: 1.1em;
   cursor: pointer;
   transition: 0.3s ease;
-  margin-bottom: 200px;
+  margin-bottom: 5px;
   display: block;
 }
 
 .card-item button:hover {
-  background: #dedede;
+  background: #7e7e7e;
   color: var(--blue);
 }
 
