@@ -56,9 +56,27 @@
                 <div class="col-md-6 mb-3">
                   <label for="sobrenome">Cargo</label>
                     <select class="form-select" aria-label="Default select example" name="cargo" value="<?=$c['nivel']?>">
-                        <option value="1">Diretor</option>
-                        <option value="2">Vendedor</option>
-                        <option value="3">Fechador</option>
+                    <?php
+                    if($c['nivel']=='1'){
+                       
+                    echo '<option value="1" selected>Diretor</option>';
+                    echo '<option value="2">Vendedor</option>';
+                    echo '<option value="3">Fechador</option>';
+
+                    }elseif ($c['nivel']=='2'){
+                      echo '<option value="1" >Diretor</option>';
+                      echo '<option value="2" selected>Vendedor</option>';
+                      echo '<option value="3">Fechador</option>';
+  
+                    }else{
+                      echo '<option value="1" >Diretor</option>';
+                      echo '<option value="2" >Vendedor</option>';
+                      echo '<option value="3" selected>Fechador</option>';
+                    }
+                    ?>
+                    
+                    
+                   
                     </select>
                 </div>
 

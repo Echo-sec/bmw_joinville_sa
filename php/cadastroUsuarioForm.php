@@ -73,7 +73,7 @@
                   </div>
                 </div>
                 <div class="col-md-6 mb-3">
-                  <label for="sobrenome">Cargo</label>
+                  <label for="sobrenome">Nivel</label>
                     <select class="form-select" aria-label="Default select example" name="cargo">
                         <option value="1">Diretor</option>
                         <option value="2">Vendedor</option>
@@ -111,7 +111,7 @@
                 <thead>
                   <tr>
                     <th scope="col">Nome</th>
-                    <th scope="col">Cargo</th>
+                    <th scope="col">Nivel</th>
                     <th scope="col">Nome usuário</th>
                     <th scope="col">Ações</th>
                   </tr>
@@ -135,7 +135,12 @@
 
                       foreach($usuarios as $c){
                           echo "<td>".$c['nomeUsuario']."</td>";
-                          echo "<td>".$c['nivel']."</td>";
+                          if($c['nivel']=='1'){
+                            echo "<td>Diretor</td>";
+                          }elseif ($c['nivel']=='2'){
+                            echo "<td>Vendedor</td>";
+                          }else{
+                            echo "<td>Fechador</td>";}
                           echo "<td>".$c['nomeCompleto']."</td>";
 
                          ?>
