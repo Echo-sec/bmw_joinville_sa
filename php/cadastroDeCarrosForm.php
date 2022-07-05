@@ -19,25 +19,25 @@
         <div class="row">
 
           <div class="col-md-12 order-md-1">
-            <form class="needs-validation" novalidate>
+            <form class="needs-validation" method="POST" action="cadastroCarro.php"novalidate>
               <div class="row">
                 <div class="col-md-6 mb-3">
-                  <label for="carro">Carro</label>
-                  <input type="text" class="form-control" id="carro" required>
+                  <label for="carro">Nome</label>
+                  <input type="text" class="form-control" id="carro" name="nome" required>
                   <div class="invalid-feedback">
                     É obrigatório inserir um nome válido.
                   </div>
                 </div>
                 <div class="col-md-6 mb-3">
                   <label for="ano">Ano</label>
-                  <input type="text" class="form-control" id="ano" required>
+                  <input type="text" class="form-control" id="ano" name="ano" required>
                   <div class="invalid-feedback">
                     É obrigatório inserir um ano válido.
                   </div>
                 </div>
                 <div class="col-md-6 mb-3">
                   <label for="modelo">Modelo</label>
-                    <select class="form-select" aria-label="Default select example">
+                    <select class="form-select" aria-label="Default select example" name="modelo">
                         <option value="1">SUV</option>
                         <option value="2">Sedan</option>
                         <option value="3">Hatch</option>
@@ -46,7 +46,7 @@
                 <div class="col-md-6 mb-3">
                 <label for="placa">Placa</label>
                 <div class="input-group">
-                  <input type="text" class="form-control" id="placa" required>
+                  <input type="text" class="form-control" id="placa" required name="placa">
                   <div class="invalid-feedback" style="width: 100%;">
                     Insira uma placa válida.
                   </div>
@@ -54,7 +54,7 @@
               </div>
               <div class="col-md-6 mb-3">
                     <label for="chassi">Chassi</label>
-                    <input type="text" class="form-control" id="chassi" required>
+                    <input type="text" class="form-control" id="chassi" required name="chassi">
                     <div class="invalid-feedback">
                         É obrigatório inserir um número de chassi válido.
                 </div>

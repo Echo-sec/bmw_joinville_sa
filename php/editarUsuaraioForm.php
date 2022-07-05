@@ -36,7 +36,7 @@
         <div class="row">
 
           <div class="col-md-12 order-md-1">
-            <form class="needs-validation" method="POST" novalidate action="editarUsuario.php" >
+          <form class="needs-validation" method="POST" novalidate action="editarUsuario.php" >
             <input type="hidden" name="idUsuario" value="<?=$c['idUsuario']?>">
               <div class="row">
                 <div class="col-md-6 mb-3">
@@ -56,8 +56,27 @@
                 <div class="col-md-6 mb-3">
                   <label for="sobrenome">Cargo</label>
                     <select class="form-select" aria-label="Default select example" name="cargo" value="<?=$c['nivel']?>">
-                        <option value="1">Vendedor</option>
-                        <option value="2">Fechador</option>
+                    <?php
+                    if($c['nivel']=='1'){
+                       
+                    echo '<option value="1" selected>Diretor</option>';
+                    echo '<option value="2">Vendedor</option>';
+                    echo '<option value="3">Fechador</option>';
+
+                    }elseif ($c['nivel']=='2'){
+                      echo '<option value="1" >Diretor</option>';
+                      echo '<option value="2" selected>Vendedor</option>';
+                      echo '<option value="3">Fechador</option>';
+  
+                    }else{
+                      echo '<option value="1" >Diretor</option>';
+                      echo '<option value="2" >Vendedor</option>';
+                      echo '<option value="3" selected>Fechador</option>';
+                    }
+                    ?>
+                    
+                    
+                   
                     </select>
                 </div>
 
@@ -74,7 +93,7 @@
               <button class="btn btn-primary btn-lg btn-block" type="submit">Editar</button>
               <div class="col-md-12 order-md-1">
               </div>
-
+            </form> 
               <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
