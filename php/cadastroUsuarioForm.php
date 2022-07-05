@@ -10,6 +10,7 @@
 </head>
 <body>
 
+<?php include("menuDiretor.php") ?>
 
 <div id="alertas">
   <?php if(isset($_GET['retorno'])==true && $_GET['retorno']==0){ ?>
@@ -74,8 +75,9 @@
                 <div class="col-md-6 mb-3">
                   <label for="sobrenome">Cargo</label>
                     <select class="form-select" aria-label="Default select example" name="cargo">
-                        <option value="1">Vendedor</option>
-                        <option value="2">Fechador</option>
+                        <option value="1">Diretor</option>
+                        <option value="2">Vendedor</option>
+                        <option value="3">Fechador</option>
                     </select>
                 </div>
 
@@ -89,24 +91,21 @@
                 </div>
               </div>
               </div>
-              <button class="btn btn-primary btn-lg btn-block" type="submit">Cadastrar</button>
-              <div class="col-md-12 order-md-1">
-                <div class="col-md-6 mb-3">
-                    <label for="primeiroNome">Nome</label>
-                    <input type="text" class="form-control" id="primeiroNome" placeholder="Pedrinho" required>
-                    <div class="invalid-feedback">
-                        É obrigatório inserir um nome válido.
-                </div>
-                <div class="col-md-6 mb-3">
-                    <button>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                        </svg>
-                    </button>
-                </div>
-              </div>
-             
+              <button class="btn btn-primary btn-lg btn-block" type="submit">Cadastrar</button>             
             </form>
+            <form action="#" method="GET" class="formAcao">
+          <div class="form-group">
+            <label class="control-label" for="textoPesquisa">Descrição </label>
+            <input class="form-control" id="textoPesquisa" type="text" name="pesquisa">
+            <button type="submit" class="botaoAcao">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
+                viewBox="0 0 16 16">
+                <path
+                  d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+              </svg>
+            </button>
+          </div>
+        </form>
             <hr class="mb-4">
               <table class="table table-hover table-dark">
                 <thead>
@@ -121,14 +120,14 @@
             <?php
                 require_once("conexaoBanco.php");
                 $comando="SELECT idUsuario, nomeUsuario, nivel, nomeCompleto from usuarios";
-                 if(isset($_GET['pesquisa']) && $_GET['pesquisa']!=""){
-                     $comando.=" WHERE nomeCompleto LIKE '".$_GET['pesquisa']."%'";
-                 }
+                if(isset($_GET['pesquisa']) && $_GET['pesquisa']!=""){
+                  $comando.=" WHERE nomeUsuario LIKE '".$_GET['pesquisa']."%'";
+              }
                  $resultado=mysqli_query($conexao, $comando);
                  $usuarios=array();
                  $linhas=mysqli_num_rows($resultado);
                  if($linhas==0){
-                  echo "<tr><td colspan='6'>Nenhum Cliente encontrado</td></tr>";
+                  echo "<tr><td colspan='6'>Nenhum uSUARIO encontrado</td></tr>";
                       }else{
                           while($c = mysqli_fetch_assoc($resultado)){
                                 array_push($usuarios, $c);
