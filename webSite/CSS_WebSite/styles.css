@@ -11,9 +11,9 @@
 }
 
 :root {
-  --orange: black;
+  --orange: rgb(0, 0, 0);
   --blue: #131313;
-  --gray: #ededed;
+  --gray: #dadada;
 }
 
 html,
