@@ -11,10 +11,19 @@ $comando="INSERT INTO carros (nome, ano, modelo, chassi, placa) VALUES
 ('".$nome."',
 '".$ano."',
 '".$modelo."',
-'".$placa."',
-'".$chassi."')
+'".$chassi."',
+'".$placa."')
 ";
 
 echo $comando;
+
+
+$resultado = mysqli_query($conexao, $comando);
+
+if($resultado==true){
+    header("Location: cadastroDeCarrosForm.php?retorno=1");
+}else{
+    header("Location: cadastroDeCarrosForm.php?retorno=0");
+}
 
 ?>

@@ -19,7 +19,7 @@
         <div class="row">
 
           <div class="col-md-12 order-md-1">
-            <form class="needs-validation" method="POST" novalidate>
+            <form class="needs-validation" method="POST" action="cadastroCarro.php"novalidate>
               <div class="row">
                 <div class="col-md-6 mb-3">
                   <label for="carro">Nome</label>
@@ -37,7 +37,7 @@
                 </div>
                 <div class="col-md-6 mb-3">
                   <label for="modelo">Modelo</label>
-                    <select class="form-select" aria-label="Default select example" nome="modelo"  >
+                    <select class="form-select" aria-label="Default select example" name="modelo">
                         <option value="1">SUV</option>
                         <option value="2">Sedan</option>
                         <option value="3">Hatch</option>
