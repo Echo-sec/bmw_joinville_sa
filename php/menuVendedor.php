@@ -18,7 +18,7 @@
               </a>
               <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="cadastroClienteForm.php">Cadastrar cliente</a></li>
-                <li><a class="dropdown-item" href="#">Consultas de agendamentos</a></li>
+                <li><a class="dropdown-item" href="telaAgendamentoForm.php">Cadastro de agendamentos</a></li>
                 <li><a class="dropdown-item" href="cadastroDeCarrosForm.php">Cadastro de carros</a></li>
               </ul>
             </li>

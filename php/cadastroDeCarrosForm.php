@@ -9,37 +9,36 @@
     <link rel="stylesheet" href="../css/forms.css">
 </head>
 <body>
-<?php include("menuDiretor.php") ?>
 
 <div id="alertas">
   <?php if(isset($_GET['retorno'])==true && $_GET['retorno']==0){ ?>
     <div class="alert alert-warning alert-dismissible fade show" role="alert">
-      <span>Houve algum problema ao a cadastrar o usuário!</span>
+      <span>Houve algum problema ao a cadastrar o Carro!</span>
       <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
     </div>
     <?php }else if(isset($_GET['retorno'])==true && $_GET['retorno']==1) {?>
     <div class="alert alert-success alert-dismissible fade show" role="alert">
-      <span>Usuário cadastrado com sucesso!</span>
+      <span>Carro cadastrado com sucesso!</span>
       <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
     </div>
     <?php }else if(isset($_GET['retorno'])==true && $_GET['retorno']==2){ ?>
 	<div class="alert alert-success alert-dismissible fade show" role="alert">
-        <span>Usuario excluído com sucesso!</span>
+        <span>Carro excluído com sucesso!</span>
         <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
     </div>
 	<?php }else if(isset($_GET['retorno'])==true && $_GET['retorno']==3){ ?>
 	<div class="alert alert-warning alert-dismissible fade show" role="alert">
-        <span>Não é possível excluir o usuário!</span>
+        <span>Não é possível excluir o carro!</span>
         <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
     </div>
 	<?php }else if(isset($_GET['retorno'])==true && $_GET['retorno']==4){ ?>
 	<div class="alert alert-success alert-dismissible fade show" role="alert">
-        <span>Pessoa editada com sucesso!</span>
+        <span>Carro editada com sucesso!</span>
         <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
     </div>
 	<?php }else if(isset($_GET['retorno'])==true && $_GET['retorno']==5){ ?>
 	<div class="alert alert-warning alert-dismissible fade show" role="alert">
-		<span>Houve algum problema editar a pessoa!</span>
+		<span>Houve algum problema editar o Carro!</span>
         <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
     </div>
 
@@ -97,21 +96,20 @@
               </div>
               </div>
               <button class="btn btn-primary btn-lg btn-block" type="submit">Cadastrar</button>
-              <div class="col-md-12 order-md-1">
-                <div class="col-md-6 mb-3">
-                    <label for="nomeCarro">Nome</label>
-                    <input type="text" class="form-control" id="nomeCarro" placeholder="BMW M2" required>
-                    <button>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                        </svg>
-                    </button>
-                    <div class="invalid-feedback">
-                        É obrigatório inserir um nome válido.
-                </div>
-              </div>
-             
             </form>
+            <form action="#" method="GET" class="formAcao">
+          <div class="form-group">
+            <label class="control-label" for="textoPesquisa">Carro </label>
+            <input class="form-control" id="textoPesquisa" type="text" name="pesquisa">
+            <button type="submit" class="botaoAcao">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
+                viewBox="0 0 16 16">
+                <path
+                  d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+              </svg>
+            </button>
+          </div>
+        </form>
             <hr class="mb-4">
               <table class="table table-hover table-dark">
                 <thead>
@@ -144,12 +142,17 @@
                         foreach($carros as $c){
                           echo "<td>".$c['nome']."</td>";
                           echo "<td>".$c['ano']."</td>";
-                          echo "<td>".$c['modelo']."</td>";
+                          if($c['modelo']=='1'){
+                            echo "<td>SUV</td>";
+                          }elseif ($c['modelo']=='2'){
+                            echo "<td>Sedan</td>";
+                          }else{
+                            echo "<td>Ratch</td>";}
                           echo "<td>".$c['placa']."</td>";
                          ?>
           
               <td>
-          <form action="editarUsuaraioForm.php" method="POST" class="formAcao">
+          <form action="editarCarroForm.php" method="POST" class="formAcao">
             <input type="hidden" name="idCarro" value="<?=$c['idCarro']?>">
             <button type="submit" class="botaoAcao">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
@@ -157,7 +160,7 @@
               </svg>
             </button>				
           </form>
-          <form action="excluirUsuario.php" method="POST" class="formAcao">
+          <form action="excluirCarro.php" method="POST" class="formAcao">
             <input type="hidden" name="idCarro" value="<?=$c['idCarro']?>">
             <button type="submit" class="botaoAcao">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
