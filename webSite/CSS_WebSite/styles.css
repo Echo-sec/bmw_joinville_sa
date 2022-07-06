@@ -9,11 +9,10 @@
   outline: none;
   font-family: "Roboto", sans-serif;
 }
-
 :root {
   --orange: #000000;
-  --blue: #2b2b2b;
-  --gray: #cccccc;
+  --blue: #1b1b1b;
+  --gray: #eeeeee;
 }
 
 html,
@@ -55,7 +54,6 @@ nav {
   font-size: 20px;
   color: white;
   cursor: pointer;
-
 }
 
 nav ul {
@@ -149,7 +147,7 @@ section .filter-card {
   width: 980px;
   height: 150px;
   background: var(--gray);
-  border-radius: 8px;
+  border-radius: 5px;
   margin: 0 auto;
   display: flex;
   flex-direction: row;
