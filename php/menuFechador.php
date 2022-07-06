@@ -1,7 +1,7 @@
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
       <div class="container">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="fechadoPrincipal.php">
           <img src="../imgLogin/Logo Bmw.png" alt="..." height="55">
           Bmw Joinville
         </a>

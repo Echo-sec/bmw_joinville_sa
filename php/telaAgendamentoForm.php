@@ -11,6 +11,36 @@
 </head>
 
 <body>
+
+<div id="alertas">
+    <?php if(isset($_GET['retorno'])==true && $_GET['retorno']==0){ ?>
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <span>Houve algum problema ao agendar o compromisso!</span>
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+    <?php }else if(isset($_GET['retorno'])==true && $_GET['retorno']==1){ ?>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <span>Compromisso agendado com sucesso!</span>
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+    <?php }else if(isset($_GET['retorno'])==true && $_GET['retorno']==2){ ?>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <span>Compromisso editado com sucesso!</span>
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+    <?php }else if(isset($_GET['retorno'])==true && $_GET['retorno']==3){ ?>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <span>Houve um  problema ao editar o compromisso!</span>
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+    <?php }else if(isset($_GET['retorno'])==true && $_GET['retorno']==4){ ?>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <span>Compromisso excluído com sucesso!</span>
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+    <?php } ?>
+    
+</div>
 <?php include("menuVendedor.php") ?>
 
   <div class="container">
@@ -23,12 +53,27 @@
     <div class="row">
 
       <div class="col-md-12 order-md-1">
-        <form class="needs-validation" novalidate>
+        <form class="needs-validation" method="POST" action="agendamento.php" novalidate>
           <div class="row">
             <div class="col-md-4 mb-3" style="width: 100%;">
               <label for="primeiroNome">Nome:</label>
-              <input type="text" class="form-control" id="primeiroNome" placeholder="Eduardo Alexandre" value=""
-                required>
+              <select class="form-control" name="nome" >
+                <?php 
+                require_once("conexaoBanco.php");
+                  $sqlcliente = "SELECT * FROM clientes";
+                  $query = mysqli_query($conexao, $sqlcliente);
+                  $clienteArray = array();
+
+                  while($c = mysqli_fetch_assoc($query)) {
+                      array_push($clienteArray, $c);
+                  }
+
+                  foreach($clienteArray as $cliente) {
+                      echo "<option value='".$cliente['idCliente']."'>".strtoupper($cliente['nomeCompleto'])."</option>";
+                  }
+                  
+                  ?>
+                </select>
               <div class="invalid-feedback">
                 É obrigatório inserir um nome válido.
               </div>
@@ -36,7 +81,7 @@
 
             <div class="col-md-4 mb-3" style="width: 100%;">
               <label for="sobrenome">Escolha uma data:</label>
-              <input type="date" class="form-control" value="" required>
+              <input type="date" class="form-control" value="" required name="data">
             </div>
 
 
@@ -45,15 +90,23 @@
               <div class="form-group col-md-4" style="width: 100%;">
                 <label for="inputState">Veiculo desejado:</label>
                 <br>
-                <select class="form-control">
-                  <option>Escolha um modelo de Carro</option>
-                  <option value="1">BMW Série 1</option>
-                  <option value="2">BMW X6 M Competition</option>
-                  <option value="3">BMW Série 3 Sedã</option>
-                  <option value="4">BMW X5</option>
-                  <option value="5">BMW Série 4 Cabrio</option>
-                  <option value="6">BMW X4</option>
-                  <option value="6">BMW Concept XM</option>
+                <select class="form-control" name="carro" >
+                <?php 
+                require_once("conexaoBanco.php");
+                  $sqlcarros = "SELECT * FROM carros";
+                  $query = mysqli_query($conexao, $sqlcarros);
+                  $carrosArray = array();
+
+                  while($c = mysqli_fetch_assoc($query)) {
+                      array_push($carrosArray, $c);
+                  }
+
+                  foreach($carrosArray as $carros) {
+                      echo "<option value='".$carros['idCarro']."'>".strtoupper($carros['nome'])."</option>";
+                  }
+                  
+                  
+                  ?>
                 </select>
               </div>
             </div>
@@ -61,17 +114,18 @@
             <div class="col-md-5 mb-3">
               <label for="appt">Escolha um horário para sua reunião:</label>
               <br>
-              <input type="time" id="appt" name="appt" min="09:00" max="18:00" required>
+              <input type="time" id="appt" min="09:00" max="18:00" name="time">
             </div>
         </form>
 
         <div class="obs">
           <label for="exampleFormControlTextarea1">Adicione uma observação</label>
           <br>
-          <textarea class="form-control"></textarea>
+          <textarea class="form-control" name="obs"></textarea>
         </div>
 
-        <button class="btn btn-primary btn-lg btn-block" type="submit">Cadastrar</button>
+        <button type="submit" class="btn btn-lg btn-primary">Cadastrar</button>
+
         
 
       </div>

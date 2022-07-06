@@ -13,6 +13,8 @@
 <body>
   
 <?php include("menuFechador.php"); ?>
+<img src="../img/bmw.jpeg" alt="" width="100%" >
+
 
 </body>
 </html>

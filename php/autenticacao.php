@@ -17,9 +17,13 @@ $resultado=mysqli_query($conexao,$comando);
 $linhas=mysqli_num_rows($resultado);
 
 if($linhas==0){
-    header("Location: ../index.php?retorno=1");
+    header("Location: efetuarLogin.html");
 }else{
     $usuario=mysqli_fetch_assoc($resultado);
+    session_start();
+    $_SESSION['nivel']=$usuario['nivel'];
+
+
     if($usuario['nivel']==='1'){
         header("Location: diretorPrincipal.php");
     }else if($usuario['nivel']==='2'){
