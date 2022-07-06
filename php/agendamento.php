@@ -6,6 +6,7 @@ $data=$_POST['data'];
 $carro=$_POST['carro'];
 $horario=$_POST['time'];
 $texto=$_POST['obs'];
+session_start();
 $usuario=$_SESSION['idUsuario'];
 
 
@@ -22,7 +23,7 @@ $usuario=$_SESSION['idUsuario'];
 
 
 
-$comando="INSERT INTO agendamentos (data, hora, clientes_idCliente, usuarios_idUsuario, carro_idCarro, detalhes) VALUES
+$comando="INSERT INTO agendamentos (data, hora, clientes_idCliente, usuarios_idUsuario, carros_idCarro, detalhes) VALUES
 ('".$data."',
 '".$horario."',
 '".$nome."',

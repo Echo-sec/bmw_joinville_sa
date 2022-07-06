@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../CSS/telaAgendamento.css">
   <title>Fechamento de Clientes</title>
 </head>
+<?php include("menuFechador.php")?>
 
     <div class="container">
         <div class="py-5 text-left text-white">
