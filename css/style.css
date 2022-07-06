@@ -4,3 +4,12 @@ body,html {
     background-image: linear-gradient(rgb(49, 49, 49), rgb(0, 0, 0));
     color: white;
 }
+.erro{
+    color: white;
+}
+.erro1{
+    padding-top: 50px;
+    text-align: center;
+    align-items: stretch;
+        
+}
