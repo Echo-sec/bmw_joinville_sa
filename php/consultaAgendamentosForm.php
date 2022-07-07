@@ -1,3 +1,7 @@
+<?php
+session_start();
+if(isset($_SESSION['nivel']) && $_SESSION['nivel']=="1"){
+?>
 <!doctype html>
 <html lang="pt-br">
 
@@ -57,7 +61,6 @@
                     <th scope="col">Cliente</th>
                     <th scope="col">Data</th>
                     <th scope="col">Hora</th>
-                    <th scope="col">Status</th>
                     <th scope="col">Vendedor</th>
                   </tr>
                 </thead>
@@ -75,3 +78,9 @@
   </script>
 </body>
 </html>
+<?php
+	}else{
+		header("Location: alertaEfetuarLogin.html");
+	}
+
+?>

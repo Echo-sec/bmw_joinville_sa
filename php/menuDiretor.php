@@ -15,7 +15,7 @@
               Menu
             </a>
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="consultaAgendamentos.php">Consulta de agenamentos</a></li>
+              <li><a class="dropdown-item" href="consultaAgendamentosForm.php">Consulta de agenamentos</a></li>
               <li><a class="dropdown-item" href="consultaFechamentoForm.php">Consulta dos fechamentos</a></li>
               <li><a class="dropdown-item" href="consultaVenda.php">Relatório de vendas</a></li>
               <li><a class="dropdown-item" href="cadastroUsuarioForm.php">Cadastro de usuários</a></li>

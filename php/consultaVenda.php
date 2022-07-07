@@ -1,3 +1,7 @@
+<?php
+session_start();
+if(isset($_SESSION['nivel']) && $_SESSION['nivel']=="1"){
+?>
 <!doctype html>
 <html lang="pt-br">
 
@@ -83,3 +87,10 @@
   </script>
 </body>
 </html>
+
+<?php
+	}else{
+		header("Location: efetuarLogin.html");
+	}
+
+?>
