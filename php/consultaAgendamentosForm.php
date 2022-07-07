@@ -11,13 +11,13 @@
 </head>
 
 <body>
-<?php include("menuVendedor.php") ?>
+<?php include("menuDiretor.php") ?>
 
   <div class="container">
     <div></div>
     <div class="py-5 text-left text-white">
       <img class="d-block mx-auto mb-3" src="../imgLogin/Logo BMW.png" alt="" width="90" height="90">
-      <h2>Consulta de Vendas</h2>
+      <h2>Consulta de agendamentos</h2>
     </div>
 
     <div class="row">

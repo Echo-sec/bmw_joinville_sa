@@ -20,25 +20,10 @@
     </div>
     <?php }else if(isset($_GET['retorno'])==true && $_GET['retorno']==1){ ?>
         <div class="alert alert-success alert-dismissible fade show" role="alert">
-        <span>Compromisso agendado com sucesso!</span>
+        <span>Agendamento cadastrado com sucesso!</span>
         <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
     </div>
-    <?php }else if(isset($_GET['retorno'])==true && $_GET['retorno']==2){ ?>
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-        <span>Compromisso editado com sucesso!</span>
-        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-    </div>
-    <?php }else if(isset($_GET['retorno'])==true && $_GET['retorno']==3){ ?>
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-        <span>Houve um  problema ao editar o compromisso!</span>
-        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-    </div>
-    <?php }else if(isset($_GET['retorno'])==true && $_GET['retorno']==4){ ?>
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-        <span>Compromisso excluído com sucesso!</span>
-        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-    </div>
-    <?php } ?>
+    <?php }?>
     
 </div>
 <?php include("menuVendedor.php") ?>
@@ -49,7 +34,7 @@
       <img class="d-block mx-auto mb-3" src="../imgLogin/Logo BMW.png" alt="" width="90" height="90">
       <h2>Agendamento de Clientes</h2>
     </div>
-    
+
 
     <div class="row">
 

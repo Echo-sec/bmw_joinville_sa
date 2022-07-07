@@ -23,7 +23,7 @@ if($linhas==0){
     session_start();
     $_SESSION['idUsuario']=$usuario['idUsuario'];
     session_start();
-    $_SESSION['nivel']=$nivelUser['nivel'];
+    $_SESSION['nivel']=$usuario['nivel'];
 
 
     if($usuario['nivel']==='1'){

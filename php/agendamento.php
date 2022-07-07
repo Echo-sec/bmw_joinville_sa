@@ -32,7 +32,14 @@ $comando="INSERT INTO agendamentos (data, hora, clientes_idCliente, usuarios_idU
 '".$texto."')
 ";
 
-echo $comando;
+$resultado=mysqli_query($conexao,$comando);
+
+if($resultado==true){
+    header("Location: telaAgendamentoForm.php?retorno=1");
+}else{
+    header("Location: telaAgendamentoForm.php?retorno=0");
+}
+
 
 
 
