@@ -17,7 +17,7 @@
                 Menu
               </a>
               <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="telaFechamento.php">Fechar agendamento</a></li>
+                <li><a class="dropdown-item" href="telaFechamentoForm.php">Fechar agendamento</a></li>
 
               </ul>
             </li>
