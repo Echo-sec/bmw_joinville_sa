@@ -19,4 +19,7 @@ require_once("conexaoBanco.php");
 
 echo "ola";
 
+
+SELECT agendamentos.carros_idCarro, clientes.nomeCompleto as cliente, agendamentos.hora, agendamentos.data, fechamentos.valor, fechamentos.status, usuarios.nomeCompleto as vendedor from usuarios inner join fechamentos on usuarios.idUsuario=fechamentos.fechador inner join agendamentos on fechamentos.agendamentos_idAgendamento = agendamentos.idAgendamento INNER join clientes on clientes.idCliente=agendamentos.clientes_idCliente WHERE clientes.idCliente ='1' or usuarios.idUsuario='' or agendamentos.data= '';
+
 SELECT agendamentos.carros_idCarro, clientes.nomeCompleto as cliente, agendamentos.data, agendamentos.hora, usuarios.nomeCompleto as vendedor from usuarios inner join fechamentos on usuarios.idUsuario=fechamentos.fechador inner join agendamentos on fechamentos.agendamentos_idAgendamento = agendamentos.idAgendamento INNER join clientes on clientes.idCliente=agendamentos.clientes_idCliente

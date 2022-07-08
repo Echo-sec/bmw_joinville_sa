@@ -66,7 +66,7 @@ if(isset($_SESSION['nivel']) && $_SESSION['nivel']=="1"){
                 </thead>
                 <?php
                 require_once("conexaoBanco.php");
-                $comando="SELECT agendamentos.carros_idCarro, clientes.nomeCompleto as cliente, agendamentos.data, fechamentos.valor, fechamentos.status, usuarios.nomeCompleto as vendedor from usuarios inner join fechamentos on usuarios.idUsuario=fechamentos.fechador inner join agendamentos on fechamentos.agendamentos_idAgendamento = agendamentos.idAgendamento INNER join clientes on clientes.idCliente=agendamentos.clientes_idCliente WHERE clientes.idCliente ='1' or usuarios.idUsuario='' or agendamentos.data= '';";
+                $comando="SELECT agendamentos.carros_idCarro, clientes.nomeCompleto as cliente, agendamentos.hora, agendamentos.data, fechamentos.valor, fechamentos.status, usuarios.nomeCompleto as vendedor from usuarios inner join fechamentos on usuarios.idUsuario=fechamentos.fechador inner join agendamentos on fechamentos.agendamentos_idAgendamento = agendamentos.idAgendamento INNER join clientes on clientes.idCliente=agendamentos.clientes_idCliente WHERE clientes.idCliente ='1' or usuarios.idUsuario='' or agendamentos.data= '';;";
                 //  if(isset($_GET['pesquisa']) && $_GET['pesquisa']!=""){
                 //      $comando.=" WHERE nomeCompleto LIKE '".$_GET['pesquisa']."%'";
                 //  }
