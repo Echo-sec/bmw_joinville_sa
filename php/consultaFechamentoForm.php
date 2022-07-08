@@ -100,22 +100,30 @@ if(isset($_SESSION['nivel']) && $_SESSION['nivel']=="1"){
                 <tr>
             <?php
                 require_once("conexaoBanco.php");
-                $comando="SELECT agendamentos.carros_idCarro, clientes.nomeCompleto as cliente, agendamentos.data, fechamentos.valor, fechamentos.status, usuarios.nomeCompleto as vendedor from usuarios inner join fechamentos on usuarios.idUsuario=fechamentos.fechador inner join agendamentos on fechamentos.agendamentos_idAgendamento = agendamentos.idAgendamento INNER join clientes on clientes.idCliente=agendamentos.clientes_idCliente WHERE clientes.idCliente =  or usuarios.idUsuario= or agendamentos.data= '2022-05-17'";
-                 if(isset($_GET['pesquisa']) && $_GET['pesquisa']!=""){
-                     $comando.=" WHERE nomeCompleto LIKE '".$_GET['pesquisa']."%'";
-                 }
+                $comando="SELECT agendamentos.carros_idCarro, clientes.nomeCompleto as cliente, agendamentos.data, fechamentos.valor, fechamentos.status, usuarios.nomeCompleto as vendedor from usuarios inner join fechamentos on usuarios.idUsuario=fechamentos.fechador inner join agendamentos on fechamentos.agendamentos_idAgendamento = agendamentos.idAgendamento INNER join clientes on clientes.idCliente=agendamentos.clientes_idCliente WHERE clientes.idCliente ='1' or usuarios.idUsuario='' or agendamentos.data= '';";
+                //  if(isset($_GET['pesquisa']) && $_GET['pesquisa']!=""){
+                //      $comando.=" WHERE nomeCompleto LIKE '".$_GET['pesquisa']."%'";
+                //  }
                  $resultado=mysqli_query($conexao, $comando);
                  $fechamento=array();
                  $linhas=mysqli_num_rows($resultado);
                  if($linhas==0){
                   echo "<tr><td colspan='6'>Nenhum Fechamento encontrado</td></tr>";
                       }else{
-                          while($c = mysqli_fetch_assoc($resultado)){
-                                array_push($fechamento, $c);
+                          while($f = mysqli_fetch_assoc($resultado)){
+                                array_push($fechamento, $f);
                         }
 
-                      foreach($clientes as $c){
-
+                      foreach($fechamento as $f){
+                        echo "<td>".$f['carros_idCarro']."</td>";
+                        echo "<td>".$f['cliente']."</td>";
+                        echo "<td>".$f['data']."</td>";
+                        echo "<td>".$f['valor']."</td>";
+                        if ($f['status']=='1'){
+                          echo "<td>Aprovado</td>";
+                        }else{
+                          echo "<td>Não aprovado</td>";}
+                        echo "<td>".$f['vendedor']."</td>";
                          ?>
 
           
