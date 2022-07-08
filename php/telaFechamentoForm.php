@@ -38,9 +38,19 @@
                     <select class="form-control" name="agendamento">
                         <option>Selecione</option>
             <?php 
+
+                function verificaAgendamento($idAgendamento, $fechamentoArray){
+                
+                    foreach($fechamentoArray as $f){
+                        if($f['id']==$idAgendamento){                            
+                         return false;
+                        }
+                    }
+                   return true;
+                }
                 require_once("conexaoBanco.php");
                   $sqlcliente = "SELECT agendamentos.*, carros.nome, clientes.nomeCompleto FROM carros INNER JOIN agendamentos ON carros.idCarro=agendamentos.carros_idCarro INNER JOIN clientes ON clientes.idCliente=agendamentos.clientes_idCliente";
-                  $sqlfechamento = "select agendamentos_idAgendamento from fechamentos";
+                  $sqlfechamento = "select agendamentos_idAgendamento as id from fechamentos";
                   $fechamentoQuery = mysqli_query($conexao, $sqlfechamento);
 
                   $fechamentoArray = array();
@@ -55,8 +65,11 @@
                       array_push($clienteArray, $c);
                   }                
              
-                  foreach($clienteArray as $cliente) {                      
-                        echo "<option value='".$cliente['idAgendamento']."'>".strtoupper($cliente['nomeCompleto'])." - ".strtoupper($cliente['nome'])."-". strtoupper($cliente['data'])."</option>";
+                  foreach($clienteArray as $cliente) {    
+                        if(verificaAgendamento($cliente['idAgendamento'], $fechamentoArray)==true){
+                            echo "<option value='".$cliente['idAgendamento']."'>".strtoupper($cliente['nomeCompleto'])." - ".strtoupper($cliente['nome'])."-". strtoupper($cliente['data'])."</option>";
+                        }             
+                        
                     }
                   
                   ?>       

@@ -31,8 +31,23 @@ if(isset($_SESSION['nivel']) && $_SESSION['nivel']=="1"){
           <div class="row">
             <div class="col-md-4 mb-3">
               <label for="nomeCliente">Nome do Cliente:</label>
-              <input type="text" class="form-control" id="nomeCliebte" placeholder="Eduardo Alexandre"
-                required>
+              <select class="form-control" name="nome" value="" >
+                <?php 
+                require_once("conexaoBanco.php");
+                  $sqlcliente = "SELECT * FROM clientes";
+                  $query = mysqli_query($conexao, $sqlcliente);
+                  $clienteArray = array();
+
+                  while($c = mysqli_fetch_assoc($query)) {
+                      array_push($clienteArray, $c);
+                  }
+
+                  foreach($clienteArray as $cliente) {
+                      echo "<option value='".$cliente['idCliente']."'>".strtoupper($cliente['nomeCompleto'])."</option>";
+                  }
+                  
+                  ?>
+                </select>
               <div class="invalid-feedback">
                 É obrigatório inserir um nome válido.
               </div>
@@ -40,17 +55,33 @@ if(isset($_SESSION['nivel']) && $_SESSION['nivel']=="1"){
 
             <div class="col-md-4 mb-3">
               <label for="nomeVendedor">Nome do Vendedor:</label>
-              <input type="text" id="nomeVendedor" class="form-control" placeholder="Mioti" required>
+              <select class="form-control" name="nome" value="" >
+                <?php 
+                require_once("conexaoBanco.php");
+                  $sqlcliente = "SELECT * FROM usuarios where nivel ='3'";
+                  $query = mysqli_query($conexao, $sqlcliente);
+                  $clienteArray = array();
+
+                  while($c = mysqli_fetch_assoc($query)) {
+                      array_push($clienteArray, $c);
+                  }
+
+                  foreach($clienteArray as $cliente) {
+                      echo "<option value='".$cliente['idUsuario']."'>".strtoupper($cliente['nomeCompleto'])."</option>";
+                  }
+                  
+                  ?>
+                </select>
             </div>
 
             <div class="col-md-4 mb-3">
               <label for="date">Escolha uma data:</label>
-              <input type="date" id="data" class="form-control" required>
+              <input type="date" id="data" value="" name="data" class="form-control" required>
             </div>
             
         </form>
         <div>
-            <button class="btn btn-primary" name="pesquisa" type="submit">Pesquisar</button>
+            <button class="btn btn-primary" name="pesquisa" value="" type="submit">Pesquisar</button>
         </div>
        
             <div>
@@ -69,7 +100,7 @@ if(isset($_SESSION['nivel']) && $_SESSION['nivel']=="1"){
                 <tr>
             <?php
                 require_once("conexaoBanco.php");
-                $comando="SELECT * from fechamentos";
+                $comando="SELECT agendamentos.carros_idCarro, clientes.nomeCompleto as cliente, agendamentos.data, fechamentos.valor, fechamentos.status, usuarios.nomeCompleto as vendedor from usuarios inner join fechamentos on usuarios.idUsuario=fechamentos.fechador inner join agendamentos on fechamentos.agendamentos_idAgendamento = agendamentos.idAgendamento INNER join clientes on clientes.idCliente=agendamentos.clientes_idCliente WHERE clientes.idCliente =  or usuarios.idUsuario= or agendamentos.data= '2022-05-17'";
                  if(isset($_GET['pesquisa']) && $_GET['pesquisa']!=""){
                      $comando.=" WHERE nomeCompleto LIKE '".$_GET['pesquisa']."%'";
                  }
@@ -84,9 +115,7 @@ if(isset($_SESSION['nivel']) && $_SESSION['nivel']=="1"){
                         }
 
                       foreach($clientes as $c){
-                          echo "<td>".$c['nomeCompleto']."</td>";
-                          echo "<td>".$c['cpf']."</td>";
-                          echo "<td>".date('d/m/Y', strtotime($c['dataNascimento']))."</td>";
+
                          ?>
 
           

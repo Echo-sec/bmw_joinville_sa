@@ -2,7 +2,7 @@
 
 $usuario="root";
 $senha="";
-$local="127.0.0.1";
+$local="127.0.0.1:3307";
 $banco="BMW";
 
 $conexao=mysqli_connect($local,$usuario,$senha,$banco);
