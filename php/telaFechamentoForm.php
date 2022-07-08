@@ -40,16 +40,24 @@
             <?php 
                 require_once("conexaoBanco.php");
                   $sqlcliente = "SELECT agendamentos.*, carros.nome, clientes.nomeCompleto FROM carros INNER JOIN agendamentos ON carros.idCarro=agendamentos.carros_idCarro INNER JOIN clientes ON clientes.idCliente=agendamentos.clientes_idCliente";
+                  $sqlfechamento = "select agendamentos_idAgendamento from fechamentos";
+                  $fechamentoQuery = mysqli_query($conexao, $sqlfechamento);
+
+                  $fechamentoArray = array();
+                  while($f = mysqli_fetch_assoc($fechamentoQuery)) {
+                    array_push($fechamentoArray, $f);
+                }
+           
                   $query = mysqli_query($conexao, $sqlcliente);
                   $clienteArray = array();
 
                   while($c = mysqli_fetch_assoc($query)) {
                       array_push($clienteArray, $c);
-                  }
-
-                  foreach($clienteArray as $cliente) {
-                      echo "<option value='".$cliente['idAgendamento']."'>".strtoupper($cliente['nomeCompleto'])." - ".strtoupper($cliente['nome'])."-". strtoupper($cliente['data'])."</option>";
-                  }
+                  }                
+             
+                  foreach($clienteArray as $cliente) {                      
+                        echo "<option value='".$cliente['idAgendamento']."'>".strtoupper($cliente['nomeCompleto'])." - ".strtoupper($cliente['nome'])."-". strtoupper($cliente['data'])."</option>";
+                    }
                   
                   ?>       
                     </select>
